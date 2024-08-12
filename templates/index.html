@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutriscore App Predictor</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet"> 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fdf6e3;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        .container {
+            background: #f8f4e5;
+            padding: 50px 100px;
+            border: 2px solid rgba(0, 0, 0, 1);
+            box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+            position: relative;
+        }
+
+        form p {
+            font-size: 24pt;
+            margin-bottom: 20px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            font-size: 14pt;
+            line-height: 28pt;
+            margin-bottom: 28pt;
+            border: none;
+            border-bottom: 5px solid rgba(0, 0, 0, 1);
+            background: #f8f4e5;
+            padding-left: 5px;
+            outline: none;
+            color: rgba(0, 0, 0, 1);
+            min-width: 250px;
+        }
+
+        input:focus {
+            border-bottom: 5px solid #ffa580;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            line-height: 28pt;
+            padding: 0 20px;
+            background: #ffa580;
+            letter-spacing: 2px;
+            transition: .2s all ease-in-out;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 1);
+            box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgba(0, 0, 0, 1);
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        button:hover {
+            background: rgba(0, 0, 0, 1);
+            color: white;
+        }
+
+        ::selection {
+            background: #ffc8ff;
+        }
+        
+        .drops {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+        }
+
+        .drop {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ffa580;
+            position: absolute;
+        }
+
+        .drop.drop-1 {
+            top: 0;
+            left: 0;
+        }
+
+        .drop.drop-2 {
+            top: 50px;
+            left: 100px;
+        }
+
+        .drop.drop-3 {
+            top: 100px;
+            left: 150px;
+        }
+
+        .drop.drop-4 {
+            top: 150px;
+            left: 50px;
+        }
+
+        .drop.drop-5 {
+            top: 200px;
+            left: 200px;
+        }
+        select {
+        display: block;
+        margin: 0 auto;
+        line-height: 28pt;
+        padding: 0 20px;
+        background: #ffa580;
+        letter-spacing: 2px;
+        transition: .2s all ease-in-out;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 1);
+        box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgba(0, 0, 0, 1);
+        font-family: 'Fjalla One', sans-serif;
+        color: white;
+        cursor: pointer;
+    }
+
+    select:hover {
+        background: rgba(0, 0, 0, 1);
+        color: white;
+    }
+
+    select option {
+        background: #ffa580;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            <p>Nutriscore Predictor</p>
+            <label>Energy</label>
+            <input type="text" id="energy" name="energy" placeholder="Energy" value="{{ request.form.energy }}">
+            <label>Saturated fat</label>
+            <input type="text" id="" name="saturated_fat" placeholder="Saturated Fat" value="{{ request.form.saturated_fat }}">
+            <label>Sugars</label>
+            <input type="text" id="sugars" name="sugars" placeholder="Sugars" value="{{ request.form.sugars }}">
+            <label>Salt</label>
+            <input type="text" id="salt" name="salt" placeholder="Salt" value="{{ request.form.salt }}">
+            <label>Fibers</label>
+            <input type="text" id="fibers" name="fibers" placeholder="Fibers" value="{{ request.form.fibers }}">
+            <label>Category</label>
+            <br>
+            <br>
+            <select id="category" name="category">
+                <option value="unknown">unknown</option>
+                <option value="Fat and sauces">Fat and sauces</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Composite foods">Composite foods</option>
+                <option value="Fruits and vegetables">Fruits and vegetables</option>
+                <option value="Milk and dairy products">Milk and dairy products</option>
+                <option value="Sugary snacks">Sugary snacks</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit">Predict Nutriscore</button>
+        </form>
+    </div>
+</body>
+</html>
