@@ -50,6 +50,7 @@ The dataset was split into 5 folds to perform cross-validation. This method help
 A Flask web application was developed to provide an interactive interface for users to input food product details and receive a predicted nutrient score. The application was designed with user-friendliness in mind and can be easily accessed through a web browser.
 
 ## Screenshots
+![Screenshot 2024-08-12 035351](https://github.com/user-attachments/assets/10bec10e-7485-4464-bfba-143d7d79fb68)
+ ![Screenshot 2024-08-12 035408](https://github.com/user-attachments/assets/a2c63de2-8584-4232-bfe3-d694d8cecfbb)
 
-![Screenshot 2024-08-12 035351](https://github.com/user-attachments/assets/77185753-8fd2-494b-9182-84a092a73883)
-![Screenshot 2024-08-12 035408](https://github.com/user-attachments/assets/dc11d022-a217-49c8-9578-bea499f68b18)
+
